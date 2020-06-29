@@ -1,0 +1,10 @@
+1. No login page
+2. Forms:
+    1. add tiles-> tile name, quantity
+    2. remove tiles -> tile Name, qty
+    3. Display all the tiles -> filter : tile Number
+
+#functional:
+1. add tile : send the data to spreadsheet and update it.
+2. remove tile : remove it from spreadsheet
+3. display : spread sheet data

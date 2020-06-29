@@ -1,0 +1,269 @@
+<Button>:
+    color:0.3,0.6,0.7,1
+    size_hint : 0.2,0.2
+
+WindowManager:
+    FirstDescription:
+    AddTiles:
+    RemoveTiles:
+    DisplayTiles:
+
+<FirstDescription>:
+    name  : "FirstPage"
+    Label:
+        text : "Welcome To Tiles Update Program"
+        pos_hint: {"x":0, "y":0.9}
+        size_hint : 1,0.1
+    Button:
+        text : "Add Tiles"
+        pos_hint: {"x": 0.3, "y":0.6}
+        size_hint : 0.4,0.1
+        on_release:
+            app.root.current = "AddTile"
+            root.manager.transition.direction = "left"
+    Button:
+        text : "Remove Tiles"
+        pos_hint: {"x": 0.3, "y":0.5}
+        size_hint : 0.4,0.1
+        on_release:
+            app.root.current = "RemoveTile"
+            root.manager.transition.direction = "left"
+    Button:
+        text : "Display Tiles"
+        pos_hint: {"x": 0.3, "y":0.4}
+        size_hint : 0.4,0.1
+        on_release:
+            app.root.current = "DisplayTile"
+            root.manager.transition.direction = "left"
+
+<AddTiles>:
+    name: "AddTile"
+    tileName : tileName
+    quantity : quantity
+
+    canvas:
+        Color:
+            rgb: [10000, 10000, 10000]
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    FloatLayout:
+        cols: 1
+        FloatLayout:
+            cols: 2
+            Label:
+                text: "Add Tiles"
+                pos_hint: {"x": 0.3, "y":0.8}
+                size_hint: 0.2,0.2
+                color: 0.74, 0.2, 0.3, 1
+                bold: True
+                canvas.before:
+                    Color:
+                        rgba: 10000,10000,10000,1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+            Label:
+                text: "Tiles Name"
+                pos_hint: {"x": 0, "y":0.7}
+                size_hint: 0.4,0.05
+                color: 0.74, 0.2, 0.3, 1
+                bold: True
+                canvas.before:
+                    Color:
+                        rgba: 10000,10000,10000,1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+            TextInput:
+                input_type: 'text'
+                pos_hint: {"x": 0.5, "y":0.7}
+                size_hint: 0.3,0.05
+                multiline: False
+                bold: True
+                foreground_color: 0.74, 0.2, 0.3, 1
+                id: tileName
+
+            Label:
+                text: "Quantity"
+                pos_hint: {"x": 0, "y":0.6}
+                size_hint: 0.4,0.05
+                color: 0.74, 0.2, 0.3, 1
+                bold: True
+                canvas.before:
+                    Color:
+                        rgba: 10000,10000,10000,1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+            TextInput:
+                input_type: 'text'
+                pos_hint: {"x": 0.5, "y":0.6}
+                size_hint: 0.3,0.05
+                multiline: False
+                bold: True
+                foreground_color: 0.74, 0.2, 0.3, 1
+                id: quantity
+
+        Button:
+            text : "Submit"
+            pos_hint: {"x": 0.3, "y":0.3}
+            size_hint : 0.4,0.1
+            on_press : root.addIt()
+            on_release:
+                app.root.current = "FirstPage"
+                root.manager.transition.direction = "right"
+        Button:
+            text : "<<"
+            pos_hint: {"x": 0, "y":0.9}
+            size_hint : 0.1,0.1
+            on_release:
+                app.root.current = "FirstPage"
+                root.manager.transition.direction = "right"
+
+<RemoveTiles>:
+    name: "RemoveTile"
+    tileName : tileName
+    quantity : quantity
+
+    canvas:
+        Color:
+            rgb: [10000, 10000, 10000]
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    FloatLayout:
+        cols: 1
+        FloatLayout:
+            cols: 2
+            Label:
+                text: "Add Tiles"
+                pos_hint: {"x": 0.3, "y":0.8}
+                size_hint: 0.2,0.2
+                color: 0.74, 0.2, 0.3, 1
+                bold: True
+                canvas.before:
+                    Color:
+                        rgba: 10000,10000,10000,1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+            Label:
+                text: "Tiles Name"
+                pos_hint: {"x": 0, "y":0.7}
+                size_hint: 0.4,0.05
+                color: 0.74, 0.2, 0.3, 1
+                bold: True
+                canvas.before:
+                    Color:
+                        rgba: 10000,10000,10000,1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+            TextInput:
+                input_type: 'text'
+                pos_hint: {"x": 0.5, "y":0.7}
+                size_hint: 0.3,0.05
+                multiline: False
+                bold: True
+                foreground_color: 0.74, 0.2, 0.3, 1
+                id: tileName
+
+            Label:
+                text: "Quantity"
+                pos_hint: {"x": 0, "y":0.6}
+                size_hint: 0.4,0.05
+                color: 0.74, 0.2, 0.3, 1
+                bold: True
+                canvas.before:
+                    Color:
+                        rgba: 10000,10000,10000,1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+            TextInput:
+                input_type: 'text'
+                pos_hint: {"x": 0.5, "y":0.6}
+                size_hint: 0.3,0.05
+                multiline: False
+                bold: True
+                foreground_color: 0.74, 0.2, 0.3, 1
+                id: quantity
+
+        Button:
+            text : "Submit"
+            pos_hint: {"x": 0.3, "y":0.3}
+            size_hint : 0.4,0.1
+            on_press : root.removeIt()
+            on_release:
+                app.root.current = "FirstPage"
+                root.manager.transition.direction = "right"
+        Button:
+            text : "<<"
+            pos_hint: {"x": 0, "y":0.9}
+            size_hint : 0.1,0.1
+            on_release:
+                app.root.current = "FirstPage"
+                root.manager.transition.direction = "right"
+
+<DisplayTiles>:
+    name: "DisplayTile"
+
+    stockresult : stockresult
+    tileName : tileName
+    FloatLayout:
+        cols: 1
+        FloatLayout:
+            size_hint: 1,1
+            cols: 2
+            Label:
+                text: "Search Tiles"
+                pos_hint: {"x": 0.3, "y":0.8}
+                size_hint: 0.2,0.2
+                color: 0.74, 0.2, 0.3, 1
+                bold: True
+
+            Label:
+                text: "Tiles Name"
+                pos_hint: {"x": 0, "y":0.7}
+                size_hint: 0.3,0.05
+                color: 0.74, 0.2, 0.3, 1
+                bold: True
+
+            TextInput:
+                input_type: 'text'
+                pos_hint: {"x": 0.4, "y":0.7}
+                size_hint: 0.3,0.05
+                multiline: False
+                bold: True
+                foreground_color: 0.74, 0.2, 0.3, 1
+                id: tileName
+
+            Button:
+                text : "Search"
+                pos_hint: {"x": 0.8, "y":0.7}
+                size_hint : 0.2,0.1
+                on_press : root.searchResult()
+            Button:
+                text : "<<"
+                pos_hint: {"x": 0, "y":0.9}
+                size_hint : 0.1,0.1
+                on_release:
+                    app.root.current = "FirstPage"
+                    root.manager.transition.direction = "right"
+        FloatLayout:
+            size_hint: 1, 0.6
+            cols: 1
+            ScrollView:
+                do_scroll_x: False
+                do_scroll_y: True
+
+                Label:
+                    id : stockresult
+                    size_hint_y: None
+                    height: self.texture_size[1]
+                    padding: 10, 10
+                    text: 'Please Search'
+
